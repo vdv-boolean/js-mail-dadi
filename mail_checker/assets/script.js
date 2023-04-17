@@ -1,4 +1,3 @@
-/*
 // Request mail address
 const requestMail = prompt("Inserire indirizzo mail");
 //Array of accepted mail addres
@@ -13,22 +12,4 @@ if (mailArray.includes(requestMail)) {
     console.log('%cMail accepted', 'color: green')
 } else {
     console.log('%cMail not accepted', 'color: red');  
-}
-*/
-// Dice Roll game
-
-// Random number for user and pc
-const userDice = Math.round(Math.random () * 5) + 1;
-const computerDice = Math.round(Math.random () * 5) + 1;
-
-// Check dice numbers
-console.log("User: " + userDice + ", PC: " + computerDice);
-
-// Declare who wins
-if (userDice > computerDice) {
-    console.log('%cYou win', 'color: green');
-} else if (userDice < computerDice) {
-    console.log('%cYou loose', 'color: red');
-} else {
-    console.log('%cParity', 'color: yellow');
 }
