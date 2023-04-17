@@ -1,25 +1,38 @@
 // Random number for user and pc
-const userDice = Math.round(Math.random () * 5) + 1;
-const computerDice = Math.round(Math.random () * 5) + 1;
+const btn = document.querySelector("button"); 
+btn.addEventListener('click', function () {
+let userDice = Math.round(Math.random () * 5) + 1;
+let computerDice = Math.round(Math.random () * 5) + 1;
 
 // Check dice numbers
 console.log("User: " + userDice + ", PC: " + computerDice);
 
 // Declare who wins
+
 const esite = document.querySelector('h2');
+const crownUser = document.querySelector('.crownUser');
+const crownPc = document.querySelector('.crownPc');
+
 if (userDice > computerDice) {
     console.log('%cYou win', 'color: green');
-    esite.innerHTML = `You win`
+    esite.innerHTML = `You win`;
+    crownUser.innerHTML = `<i class="fa-solid fa-crown"></i>`;
+    crownPc.innerHTML = ``;
 } else if (userDice < computerDice) {
     console.log('%cYou loose', 'color: red');
-    esite.innerHTML = `You loose`
+    esite.innerHTML = `You loose`;
+    crownPc.innerHTML = `<i class="fa-solid fa-crown"></i>`;
+    crownUser.innerHTML = ``;
 } else {
-    console.log('%cParity', 'color: yellow');
-    esite.innerHTML = `Parity`
+    console.log('%cIt\'s a tie!', 'color: yellow');
+    esite.innerHTML = `It's a tie!`;
+    crownPc.innerHTML = ``;
+    crownUser.innerHTML = ``;
 }
 
 const user = document.querySelector('.user');
 const computer = document.querySelector('.computer');
+
 
 if (userDice == 1) {
     user.innerHTML = `<i class="fa-solid fa-dice-one"></i>`;
@@ -48,3 +61,4 @@ if (computerDice == 1) {
 } else if (computerDice == 6) {
     computer.innerHTML = `<i class="fa-solid fa-dice-six"></i>`;
 }
+})
